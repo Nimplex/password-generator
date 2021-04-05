@@ -1,13 +1,12 @@
-import random
-import pyperclip
+from random import randint
+from pyperclip import copy
 
 password = ""
-length = int(input("Length: "))
 
-for i in range(0, length):
-  password += chr(random.randint(33, 126))
+for i in range(0, int(input("Length: "))):
+  password += chr(randint(33, 126))
 
 print("Password: " + password)
 
 if (input("Copy to clipboard (Y/N)? ")) in ["Y","y"]:
-  pyperclip.copy(password)
+  copy(password)
